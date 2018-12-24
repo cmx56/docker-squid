@@ -5,6 +5,10 @@ ENV SQUID_VERSION=3.5.27 \
     SQUID_CACHE_DIR=/var/spool/squid \
     SQUID_LOG_DIR=/var/log/squid \
     SQUID_USER=proxy
+    http_proxy=http://172.17.0.1:3128 \
+    https_proxy=http://172.17.0.1:3128 \
+    ftp_proxy=http://172.17.0.1:3128
+    
 
 RUN apt-get update \
  && DEBIAN_FRONTEND=noninteractive apt-get install -y squid=${SQUID_VERSION}* \
